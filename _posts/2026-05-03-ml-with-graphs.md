@@ -49,5 +49,5 @@ Three key concepts will be introduced in this section: **Node Degree** and **Clu
 
 #### Clustering Coefficient
 
-### Graphlet Degree Vector (GDV)
+#### Graphlet Degree Vector (GDV)
 
