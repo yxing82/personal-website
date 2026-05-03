@@ -10,6 +10,8 @@ math: true
 
 For traditional machine learning, people basically work on capturing features to make predictions. Specifically, researchers use hand-designed features.
 
+Given graph $G = (V, E)$, we want to know how to learn a function $f: V \rightarrow \mathbb{R}$ 
+
 In this post, we will talk about 3 types of predictions about the Graph:
 
 - Node-level prediction
