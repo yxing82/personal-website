@@ -6,7 +6,7 @@ tags: [graphs, ml]
 math: true
 ---
 
-## Traditional Machine learning
+## 1. Traditional Machine learning
 
 For traditional machine learning, people basically work on capturing features to make predictions. Specifically, researchers use hand-designed features.
 
@@ -18,7 +18,7 @@ In this post, we will talk about 3 types of predictions about the Graph:
 - Link-level prediction
 - Graph-level prediction
 
-## Node-level Prediction
+## 2. Node-level Prediction
 
 - Task: Mainly focus on node classifications based on features.
 - Goal: 
@@ -29,25 +29,25 @@ Researches are focused on 2 features:
 1. Importance-based features
 2. Structure-based features
 
-### Importance-based features
+### 2.1 Importance-based features
 
 For importance-based features, the main question is "_How to identify the importance of a certain node?_"
 
 Two types of features will be discussed in this section: **Node Degree** and **Node Centrality**.
 
-#### Node Degree
+#### 2.1.1 Node Degree
 
-#### Node Centrality
+#### 2.1.2 Node Centrality
 
-### Structure-based features
+### 2.2 Structure-based features
 
 Structure-based featurs are explored to capture topological properties of local neighbouring nodes in the network.
 
 Three key concepts will be introduced in this section: **Node Degree** and **Clustering Coefficient**, and **Graphlet Degree Vector**.
 
-#### Node Degree
+#### 2.2.1 Node Degree
 
-#### Clustering Coefficient
+#### 2.2.2 Clustering Coefficient
 
-#### Graphlet Degree Vector (GDV)
+#### 2.2.3 Graphlet Degree Vector (GDV)
 
