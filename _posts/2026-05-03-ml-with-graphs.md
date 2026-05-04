@@ -173,14 +173,12 @@ Ranges from 0 (no edges among neighbours) to 1 (neighbours form a complete cliqu
 
 $$cc_v = \frac{\text{# closed 4-cycles through } v}{\text{# possible 4-cycles through } v}$$
 
-<div style="margin-left: 40px;">
+*   
+    | Graph type | Smallest cycle | Clustering measures |
+    |---|---|---|
+    | General (unipartite) | Triangle (3-cycle) | Standard clustering coefficient |
+    | Bipartite | Square (4-cycle) | Bipartite clustering coefficient |
 
-| Graph type | Smallest cycle | Clustering measures |
-|---|---|---|
-| General (unipartite) | Triangle (3-cycle) | Standard clustering coefficient |
-| Bipartite | Square (4-cycle) | Bipartite clustering coefficient |
-
-</div>
 
 
 **iii) Graphlet Degree Vector (GDV):** A vector that counts, for each graphlet position, how many times node $v$ appears in that position, generalising the notion of counting triangles in the **Clustering Coefficient** by counting *all* small subgraph patterns (graphlets) that a node participates in. 
@@ -264,7 +262,7 @@ To break down this complicated form, let $P^{(k)}_{uv} = \text{\# paths of lengt
     
     *   $A_{uw}$: Is there an edge from node $u$ to an intermediate node $w$? (1 if yes, 0 if no).
     *   $A_{wv}$: Is there an edge from that same intermediate node $w$ to the destination node $v$? (1 if yes, 0 if no).
-    *   $\sum$: By summing over every possible intermediate node $w$ in the entire graph (from $1$ to $|V|$), we count how many two-step paths exist between $u$ and $v$.
+    *   $\sum$: By summing over every possible intermediate node $w$ in the entire graph (from $1$ to $\vert V \vert$), we count how many two-step paths exist between $u$ and $v$.
 
 
 
