@@ -118,7 +118,7 @@ Limitation: treats all neighbours equally.
     
     A node is important if it lies on many shortest paths between other nodes.
 
-    $$c_v = \sum_{s \neq v \neq t} \frac{\text{\# shortest paths between } s \text{ and } t \text{ that pass through } v}{\text{\# shortest paths between } s \text{ and } t}$$
+    $$c_v = \sum_{s \neq v \neq t} \frac{\text{# shortest paths between } s \text{ and } t \text{ that pass through } v}{\text{# shortest paths between } s \text{ and } t}$$
 
     Captures "bridge" nodes.
 
@@ -145,8 +145,8 @@ Distinguishes topological roles, e.g. the node is a "central hub", or a "bridge"
 
 $$
 \begin{aligned}
-e_{v} &= \frac{\text{\# edges among neighbours of } v}{\text{\# node pairs among neighbours of } v} \\[1em]
-&= \frac{\text{\# triangles}}{\binom{k_v}{2}} \in [0, 1]
+e_{v} &= \frac{\text{# edges among neighbours of } v}{\text{# node pairs among neighbours of } v} \\[1em]
+&= \frac{\text{# triangles}}{\binom{k_v}{2}} \in [0, 1]
 \end{aligned}
 $$
 
