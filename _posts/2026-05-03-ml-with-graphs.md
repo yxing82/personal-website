@@ -64,7 +64,8 @@ Before doing ML, we need to decide *how* to represent a graph.
 
 **Key properties:**
 - **Node degree $k_{i}$:** number of edges touching node i. For directed graphs, we distinguish in-degree and out-degree.
-- Average degree of an undirected graph:$$\bar{k} = \frac{2|E|}{|V|}$$
+- Average degree of an undirected graph:
+$$\bar{k} = \frac{2|E|}{|V|}$$
 - **Connectivity:** A graph is connected if there is a path between every pair of nodes. 
     - A directed graph is **strongly connected** if there is a valid path from every node to every other node, strictly following the direction of the edges.
     - A directed graph is **weakly connected** if it is not strongly connected, but it would be connected if treating all one-way arrows as two-way lines.
