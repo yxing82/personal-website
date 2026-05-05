@@ -626,7 +626,6 @@ $$
 \mathbf{z}_u \leftarrow \mathbf{z}_u - (\eta \frac{\partial\mathcal{L}}{\partial\mathbf{z}_u})
 $$
 
-
 6. **Iterate** over millions of node pairs. 
     - Sample **true** node pairs $\rightarrow$ Calculate the dot product and squash it with the sigmoid function to get the probability $p$ $\rightarrow$ Get the error between the target and the function result $\rightarrow$ Update in the embedding matrix $\mathbf{Z}$ for both nodes
         - Visual result: true nodes are **pulled together** in the embedding space 
