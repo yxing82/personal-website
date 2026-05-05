@@ -566,14 +566,14 @@ $$
 
 - $$\exp (\mathbf{z}_{u}^\top \mathbf{z}_{u})$$ makes the similarity score *strictly positive* to generate the probability output.
 
-- $$\sum_{n \in V} \exp (\mathbf{z}_{u}^\top \mathbf{z}_{n})$$ calculates similarity scores between node *u* and every other node in the graph. This ensures the output is a clean percentage in *(0, 1)*.
+- $$\sum_{n \in V} \exp (\mathbf{z}_{u}^\top \mathbf{z}_{n})$$ calculates similarity scores between node $$u$$ and every other node in the graph. This ensures the output is a clean percentage in $$(0, 1)$$.
 
 - $P(v \mid \mathbf{z}_{u})$ sums to 1 and all entries are positive, making it a valid probability distribution.
 
 - $P(v \mid \mathbf{z}_{u})$ is a monotonic function, where a higher dot product score implies a higher probability.
 
 
-**Problem:** the denominator requires summing over every node pair in the graph. For each training pair $(u, v)$, this is $O(\vert V \vert)$, and across all pairs it becomes $O(\vert V \vert)^{2}$. Intractable for large graphs.
+**Problem:** the denominator requires summing over every node pair in the graph. For each training pair $(u, v)$, this is $$O(\vert V \vert)$$, and across all pairs it becomes $$O(\vert V \vert)^{2}$$. Intractable for large graphs.
 
 **Solution:** Negative Sampling.
 
@@ -611,14 +611,14 @@ Here is the concrete procedure for learning the embedding matrix $\mathbf{Z}$:
 2. **Sample walks** form all nodes using the chosen walk strategy $R$, and collect co-occurring pairs $(u, v)$.
 
 3. **For each positive pair** $(u,v)$:
-    - Look up \( \mathbf{z}_{u}$ and $\mathbf{z}_{v} \) from the embedding matrix;
+    - Look up $$\mathbf{z}_{u}$ and $\mathbf{z}_{v}$$ from the embedding matrix;
     - Sample $K$ neagtive nodes $n_1, ..., n_K$ proportional to node degree, so the probability of picking node $n$ as a negative is:
     $$
     P(n) = \frac{\text{deg}(n)}{\sum_{m \in V} \text{deg}(m)}
     $$
     - Compute the negative-sampling loss for this pair
 
-4. **Backpropagate** through the loss to compute gradients \( \frac{\partial\mathcal{L}}{\partial\mathbf{z}_u}$, $\frac{\partial\mathcal{L}}{\partial\mathbf{z}_v}$, $\frac{\partial\mathcal{L}}{\partial\mathbf{z}_{n_i}} \).
+4. **Backpropagate** through the loss to compute gradients $$\frac{\partial\mathcal{L}}{\partial\mathbf{z}_u}$, $\frac{\partial\mathcal{L}}{\partial\mathbf{z}_v}$, $\frac{\partial\mathcal{L}}{\partial\mathbf{z}_{n_i}}$$.
 
 5. **Update** the corresponding columns of $\mathbf{Z}$ via stochastic gradient descent (SGD), where $\eta$ is the learning rate (i.e. Overwrite random numbers in the embeddings with better numbers to make entries as probabilities we expected):
 
@@ -708,8 +708,8 @@ $$
 | Embedding goal | $\text{similarity}(u,v) \approx \mathbf{z}_u^\top\mathbf{z}_v$ |
 | Shallow encoder | $\text{ENC}(v) = \mathbf{Z} \cdot \mathbf{v}$ |
 | MLE objective | $\max_{\mathbf{f}} \sum_{u} \log P(N_R(u) \mid \mathbf{z}_u)$ |
-| Independence assumption | $P(N_R(u) \mid \mathbf{z}_u) = \prod_{v \in N_R(u)} P(v \mid \mathbf{z}_u)$ |
+| Independence assumption | $$P(N_R(u) \mid \mathbf{z}_u) = \prod_{v \in N_R(u)} P(v \mid \mathbf{z}_u)$$ |
 | Loss (negative log-likelihood) | $\mathcal{L} = \sum_{u}\sum_{v \in N_R(u)} -\log (P(v \mid \mathbf{z}_u))$ |
 | Softmax (multi-class) | $P(v \mid \mathbf{z}_u) = \frac{\exp(\mathbf{z}_u^\top\mathbf{z}_v)}{\sum_n\exp(\mathbf{z}_u^\top\mathbf{z}_n)}$ |
-| Negative sampling (binary) | \( \approx -\log(\sigma(\mathbf{z}_u^\top\mathbf{z}_v)) - \sum_{i=1}^k\log(\sigma(-\mathbf{z}_u^\top\mathbf{z}_{n_i})) \) |
+| Negative sampling (binary) |  $$\approx -\log(\sigma(\mathbf{z}_u^\top\mathbf{z}_v)) - \sum_{i=1}^k\log(\sigma(-\mathbf{z}_u^\top\mathbf{z}_{n_i}))$$ |
 | Node2vec bias ($d_{ux}=0,1,2$) | Weights: $\frac{1}{p}$, $1$, $\frac{1}{q}$ |
