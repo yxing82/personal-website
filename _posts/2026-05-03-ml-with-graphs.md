@@ -562,18 +562,18 @@ $$
 
 , where:
 
-- $\mathbf{z}_{u}^\top \mathbf{z}_{u}$ is the raw similarity score between node *u* and *v*.
+- $$\mathbf{z}_{u}^\top \mathbf{z}_{u}$$ is the raw similarity score between node $$u$$ and $$v$$.
 
-- $\exp (\mathbf{z}_{u}^\top \mathbf{z}_{u})$ makes the similarity score *strictly positive* to generate the probability output.
+- $$\exp (\mathbf{z}_{u}^\top \mathbf{z}_{u})$$ makes the similarity score *strictly positive* to generate the probability output.
 
-- $\sum_{n \in V} \exp (\mathbf{z}_{u}^\top \mathbf{z}_{n})$ calculates similarity scores between node *u* and every other node in the graph. This ensures the output is a clean percentage in *(0, 1)*.
+- $$\sum_{n \in V} \exp (\mathbf{z}_{u}^\top \mathbf{z}_{n})$$ calculates similarity scores between node *u* and every other node in the graph. This ensures the output is a clean percentage in *(0, 1)*.
 
 - $P(v \mid \mathbf{z}_{u})$ sums to 1 and all entries are positive, making it a valid probability distribution.
 
 - $P(v \mid \mathbf{z}_{u})$ is a monotonic function, where a higher dot product score implies a higher probability.
 
 
-**Problem:** the denominator requires summing over every node pair in the graph. For each training pair \( (u, v) \), this is \( O(\vert V \vert) \), and across all pairs it becomes \( O(\vert V \vert)^{2} \). Intractable for large graphs.
+**Problem:** the denominator requires summing over every node pair in the graph. For each training pair $(u, v)$, this is $O(\vert V \vert)$, and across all pairs it becomes $O(\vert V \vert)^{2}$. Intractable for large graphs.
 
 **Solution:** Negative Sampling.
 
