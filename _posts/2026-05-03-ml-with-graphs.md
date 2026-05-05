@@ -872,7 +872,11 @@ $$
 P\left(w_t \;\middle|\; \{w_{t-\Delta}, \ldots, w_{t+\Delta}, \mathbf{z}_G\}\right) = \frac{\exp(y(w_t))}{\sum_{i=1}^{\eta} \exp(y(w_i))}
 $$
 
-> Notion: This is the probability of seeing target walk ($$w_{t}$$), given the surrounding walk contexts and the overall graph embedding.
+> **Notion:** This is the probability of seeing target walk ($$w_{t}$$), given the surrounding walk contexts and the overall graph embedding.
+
+> **Notion:** For the whole graph embedding learning process, 
+>   - $\mathbf{z}_G$ is the global clue, meaning a completely separate, special vector of the entire graph. It's treated a shared context for all walks in the graph.
+>   - $$w_{t-\Delta}$$ are local clues, representing local structures.
 
 , and the score function $$y(w_t)$$ is:
 
@@ -885,3 +889,65 @@ That is - Average the embeddings of the context walks, concatenate with the grap
 
 **Training Procedure:**
 
+1. For each node $u$ in $G$, run $T$ random walks of length $l$ to produce $$N_R(u) = \{ w_1^{u}, w_2^{u}, ..., w_T^{u} \}$$.
+
+2. Optimise the objective above over all nodes, learning both the walk embeddings $$\mathbf{z}_i$$ and the graph embedding $$\mathbf{z}_G$$ jointly via SGD.
+
+3. After training, only keep $$\mathbf{z}_G$$ as the final graph-level representation.
+
+<br>
+
+## 4.5 Using Embeddings for Downstream Tasks
+
+- **Cluster / community detection:** Cluster node embeddings to discover communities.
+
+- **Node classification:** Use $$\mathbf{z}_v$$ as input features to a classifier to predict node labels.
+
+- **Link prediction:** Given a pair $(u, v)$, predict whether an edge exists. The pair of embeddings $$(\mathbf{z}_u, \mathbf{z}_v)$$ can be combined in several ways to produce a single feature vector for a binary classifier:
+
+    | Method | Formula | Captures |
+    |---|---|---|
+    | Concatenation | $$[\mathbf{z}_u ; \mathbf{z}_v]$$ | Full information from both, asymmetric |
+    | Hadamard (element-wise) product | $$\mathbf{z}_u \odot \mathbf{z}_v$$ | Per-dimension interaction |
+    | Sum / Average | $$\mathbf{z}_u + \mathbf{z}_v$$ | Symmetric, position-agnostic |
+    | Distance | $$\|\mathbf{z}_u - \mathbf{z}_v\|$$ | How far apart they are |
+
+- **Graph classification:** Use $$\mathbf{z}_G$$ as input to a classifier to predict graph-level labels (e.g. toxic / non-toxic).
+
+<br>
+
+## 4.6 Comparative Analysis
+
+### Node Embedding vs. Graph Embedding
+
+| | Node Embedding | Graph Embedding |
+|---|---|---|
+| **Target** | Individual node $v$ | Entire graph $G$ |
+| **Output** | $$\mathbf{z}_v \in \mathbb{R}^d$$ per node | $$\mathbf{z}_G \in \mathbb{R}^d$$ per graph |
+| **Similarity semantics** | $$\mathbf{z}_u^\top \mathbf{z}_v \approx$$ node-pair similarity | $$\mathbf{z}_{G_1}^\top \mathbf{z}_{G_2} \approx$$ graph-pair similarity |
+| **Downstream tasks** | Node classification, link prediction | Graph classification, anomaly detection |
+| **Identity dependence** | Depends on specific nodes | Must be invariant to node labelling |
+
+
+### Anonymous Walks vs. Standard Random Walks (Node Embedding)
+
+| | Standard Random Walk (DeepWalk / node2vec) | Anonymous Walk |
+|---|---|---|
+| **Records** | Actual node identities visited | First-visit indices (node-identity agnostic) |
+| **Goal** | Node-level embedding via co-occurrence | Graph-level embedding via walk-pattern distribution |
+| **Similarity captured** | Node similarity (co-occurrence probability) | Structural similarity of entire graph |
+| **Identity dependent?** | Yes <br> each node gets its own embedding | No <br> purely structural |
+| **Output** | One vector per node | One vector per graph |
+
+<br>
+
+## 4.7 Summary of Key Equations
+
+| Concept | Equation |
+|---|---|
+| Graph embedding by aggregation | $$\mathbf{z}_G = \sum_{v \in G} \mathbf{z}_v$$ |
+| Anonymous walk definition | $$(f(v_1), f(v_2), \ldots, f(v_k))$$ where $$f(v_i)$$ = first-visit index |
+| Feature-based AWE | $$\mathbf{z}_G[i] = P(w_i \text{ in } G)$$ |
+| Sample size for feature-based AWE | $$m = \lceil \frac{2}{\varepsilon^2}(\log(2^\eta - 2) - \log(\delta)) \rceil$$ |
+| Data-driven AWE objective | $$\max \frac{1}{T} \sum_{t=\Delta}^{T-\Delta} \log P(w_t \mid w_{t-\Delta}, \ldots, w_{t+\Delta}, \mathbf{z}_G)$$ |
+| Walk prediction score | $$y(w_t) = b + U \cdot \text{cat}\left(\frac{1}{2\Delta}\sum \mathbf{z}_i, \; \mathbf{z}_G\right)$$ |
