@@ -1,0 +1,14 @@
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    if (document.querySelector('#toc')) {
+      tocbot.init({
+        tocSelector: '#toc',
+        contentSelector: '.post-content',
+        headingSelector: 'h1, h2, h3', /* This is the magic line */
+        hasInnerContainers: true,
+        scrollSmooth: false,
+        tocScrollOffset: 80
+      });
+    }
+  });
+</script>
