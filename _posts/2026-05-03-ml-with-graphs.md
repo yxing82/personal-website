@@ -172,6 +172,7 @@ Ranges from 0 (no edges among neighbours) to 1 (neighbours form a complete cliqu
 > **Bipartite Clustering Coefficient (4-Cycles / Squares):** counts 4-cycle (square) as a closed path $u_{1} \rightarrow v_{1} \rightarrow u_{2} \rightarrow v_{2} \rightarrow u_{1}$, where $u_{1}, u_{2} \in U$ and $v_{1}, v_{2} \in V$. 
 >
 > $$cc_v = \frac{\text{# closed 4-cycles through } v}{\text{# possible 4-cycles through } v}$$
+>
 > | Graph type | Smallest cycle | Clustering measures |
 > |---|---|---|
 > | General (unipartite) | Triangle (3-cycle) | Standard clustering coefficient |
@@ -419,6 +420,7 @@ $$
 *   $\mathbf{v} \in \mathbb{I}^{\vert V \vert}$: One-hot indicator for node $v$
 
 > In some cases, each row in the embedding matrix can be represented as an embedding vector. 
+{: .prompt-tip }
 
 The embedding matrix is what we learn. Every node is assigned a unique, independent embedding vector. Here, no parameter sharing, no generalisation to unseen nodes.
 
@@ -447,6 +449,7 @@ DeepWalk and Node2vec are differeciated by walk strategies.
 The **walk strategy $R$** determines the **neighbourhood $N_{R}(u)$**, the multiset of nodes visited on walks starting from node $u$.
 
 > "multiset" means we allow the same node appears more than once in the list.
+{: .prompt-tip }
 
 Two hyperparameters control the volume of walk data generated for all walk-based methods:
 
@@ -532,7 +535,9 @@ $$
 \max_{\mathbf{f}} \sum_{u \in V} \log P\bigl(N_R(u) \mid \mathbf{z}_u\bigr)
 $$
 
-> In the shallow encoding setup, $f$ is just the lookup table, so the actual learnable parameters are the embedding vectors $\mathbf{z}_{u}$ themselves (i.e. the columns of the embedding matrix $Z$). <br> In this case, $f$ is equivalent to specifying $Z$.
+> In the shallow encoding setup, $f$ is just the lookup table, so the actual learnable parameters are the embedding vectors $\mathbf{z}_{u}$ themselves (i.e. the columns of the embedding matrix $Z$).
+>
+> In this case, $f$ is equivalent to specifying $Z$.
 {: .prompt-tip }
 
 We assume that predicting each neighbour $v \in N_{R}(u)$ is conditionally independent given $\mathbf{z}_{u}$. This lets us decompose the joint probability into a product over individual neighbours:
