@@ -89,6 +89,7 @@ The traditional ML pipeline on graphs has two steps:
 The notes below cover what features to design at each level.
 
 > For simplicity, all discussion below assumes **undirected graphs** unless stated otherwise.
+{: .prompt-tip }
 
 <br>
 
@@ -162,21 +163,21 @@ $$
 
 Ranges from 0 (no edges among neighbours) to 1 (neighbours form a complete clique).
 
-*   **Problems with Bipartite Graphs:** 
-    *   Triangles can NEVER form: if $u_{1} \in U$ connects to $v_{1} \in V$ and $v_{2} \in V$, the edge $(v_{1}, v_{2})$ cannot exist because both are in the same set $V$.
+> **Problems with Bipartite Graphs:** 
+>    *   Triangles can NEVER form: if $u_{1} \in U$ connects to $v_{1} \in V$ and $v_{2} \in V$, the edge $(v_{1}, v_{2})$ cannot exist because both are in the same set $V$.
+>
+>        The standard Clustering Coefficient is then always **zero** for every node in a bipartite graph
 
-        The standard Clustering Coefficient is then always **zero** for every node in a bipartite graph
+> **Bipartite Clustering Coefficient (4-Cycles / Squares):** counts 4-cycle (square) as a closed path $u_{1} \rightarrow v_{1} \rightarrow u_{2} \rightarrow v_{2} \rightarrow u_{1}$, where $u_{1}, u_{2} \in U$ and $v_{1}, v_{2} \in V$. 
 
-*   **Bipartite Clustering Coefficient (4-Cycles / Squares):** counts 4-cycle (square) as a closed path $u_{1} \rightarrow v_{1} \rightarrow u_{2} \rightarrow v_{2} \rightarrow u_{1}$, where $u_{1}, u_{2} \in U$ and $v_{1}, v_{2} \in V$. 
+> $$cc_v = \frac{\text{# closed 4-cycles through } v}{\text{# possible 4-cycles through } v}$$
 
-$$cc_v = \frac{\text{# closed 4-cycles through } v}{\text{# possible 4-cycles through } v}$$
-
-*   
+>   
     | Graph type | Smallest cycle | Clustering measures |
     |---|---|---|
     | General (unipartite) | Triangle (3-cycle) | Standard clustering coefficient |
     | Bipartite | Square (4-cycle) | Bipartite clustering coefficient |
-
+{: .prompt-tip }
 
 
 **iii) Graphlet Degree Vector (GDV):** A vector that counts, for each graphlet position, how many times node $v$ appears in that position, generalising the notion of counting triangles in the **Clustering Coefficient** by counting *all* small subgraph patterns (graphlets) that a node participates in. 
@@ -533,6 +534,7 @@ $$
 $$
 
 > In the shallow encoding setup, $f$ is just the lookup table, so the actual learnable parameters are the embedding vectors $\mathbf{z}_{u}$ themselves (i.e. the columns of the embedding matrix $Z$). <br> In this case, $f$ is equivalent to specifying $Z$.
+{: .prompt-tip }
 
 We assume that predicting each neighbour $v \in N_{R}(u)$ is conditionally independent given $\mathbf{z}_{u}$. This lets us decompose the joint probability into a product over individual neighbours:
 
