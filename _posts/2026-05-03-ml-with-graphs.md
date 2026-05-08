@@ -177,7 +177,7 @@ Ranges from 0 (no edges among neighbours) to 1 (neighbours form a complete cliqu
 > |---|---|---|
 > | General (unipartite) | Triangle (3-cycle) | Standard clustering coefficient |
 > | Bipartite | Square (4-cycle) | Bipartite clustering coefficient |
-{: .prompt-tip }
+{: .prompt-info }
 
 
 **iii) Graphlet Degree Vector (GDV):** A vector that counts, for each graphlet position, how many times node $v$ appears in that position, generalising the notion of counting triangles in the **Clustering Coefficient** by counting *all* small subgraph patterns (graphlets) that a node participates in. 
@@ -538,7 +538,7 @@ $$
 > In the shallow encoding setup, $f$ is just the lookup table, so the actual learnable parameters are the embedding vectors $\mathbf{z}_{u}$ themselves (i.e. the columns of the embedding matrix $Z$).
 >
 > In this case, $f$ is equivalent to specifying $Z$.
-{: .prompt-tip }
+{: .prompt-info }
 
 We assume that predicting each neighbour $v \in N_{R}(u)$ is conditionally independent given $\mathbf{z}_{u}$. This lets us decompose the joint probability into a product over individual neighbours:
 
@@ -892,12 +892,12 @@ P\left(w_t \;\middle|\; \{w_{t-\Delta}, \ldots, w_{t+\Delta}, \mathbf{z}_G\}\rig
 $$
 
 > This is the probability of seeing target walk ($$w_{t}$$), given the surrounding walk contexts and the overall graph embedding.
-{: .prompt-tip }
+{: .prompt-info }
 
 > For the whole graph embedding learning process, 
 >   - $\mathbf{z}_G$ is the global clue, meaning a completely separate, special vector of the entire graph. It's treated a shared context for all walks in the graph.
 >   - $$w_{t-\Delta}$$ are local clues, representing local structures.
-{: .prompt-tip }
+{: .prompt-info }
 
 , and the score function $$y(w_t)$$ is:
 
