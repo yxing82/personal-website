@@ -14,11 +14,11 @@ math: true
 
 <br>
 
-# 1. Introduction to Graph ML
+## 1. Introduction to Graph ML
 
 <br>
 
-## 1.1 Why Graphs?
+### 1.1 Why Graphs?
 
 Many real-world data naturally live on graphs, simply, entities connected by relationships. Rather than treating data points as isolated, graphs let us model the rich structure of interactions between them.
 
@@ -40,7 +40,7 @@ Many real-world data naturally live on graphs, simply, entities connected by rel
 
 
 
-## 1.2 Choice of Graph Representation
+### 1.2 Choice of Graph Representation
 
 Before doing ML, we need to decide *how* to represent a graph. 
 
@@ -80,7 +80,7 @@ $$\bar{k} = \frac{2|E|}{|V|}$$
 <br>
 <br>
 
-# 2. Traditional Feature-based Methods
+## 2. Traditional Feature-based Methods
 
 The traditional ML pipeline on graphs has two steps:
 1. Hand-design features that describe nodes, links, graphs;
@@ -92,11 +92,11 @@ The notes below cover what features to design at each level.
 
 <br>
 
-## 2.1 Node-Level Features
+### 2.1. Node-Level Features
 
 **Goal:** Characterise the structure and position of a single node in the network.
 
-### 1. Importance-based features
+### Importance-based features
 
 Measures how important the node is.
 
@@ -138,7 +138,7 @@ Limitation: treats all neighbours equally.
     
     High closeness = the node can reach everyone quickly.
 
-### 2. Structure-based features
+### Structure-based features
 
 Captures *topological properties* of the graph, and how nodes are embedded with their local neighbours, regardless of what the nodes actually represent.
 
@@ -203,17 +203,17 @@ This provides a rich, detailed signature of a node's local network topology.
 
 <br>
 
-## 2.2 Link-Level Features
+### 2.2. Link-Level Features
 
 **Goal:** Design features for a *pair* of nodes $(v_{1}, v_{2})$ to predict whether a link exists or will form between them.
 
-### 1. Distance-Based Features
+### Distance-Based Features
 
 Use the **shortest-path distance** between $v_{1}$ and $v_{2}$, meaning how likely nodes can be connected.
 
 Limitation: this only captures path length, not the *richness* of the connection (degree information, e.g. two nodes at distance 2 might share 1 or 100 common neighbours).
 
-### 2. Local Neighbourhood Overlap
+### Local Neighbourhood Overlap
 
 Captures how many neighbours are shared between two nodes. More overlap means more likely to be linked.
 
@@ -235,7 +235,7 @@ The intuition: a shared neighbour who is very popular (high degree) is less mean
 
 **Limitation of local features:** If two nodes have no common neighbours, all these features are zero, even if the nodes are structurally very similar or destined to connect.
 
-### 3. Global Neighbourhood Overlap
+### Global Neighbourhood Overlap
 
 Considers the entire graph, not just immediate neighbourhoods.
 
@@ -277,11 +277,11 @@ The Katz index resolves the limitation of local methods by capturing indirect co
 
 <br>
 
-## 2.3 Graph-Level Features
+## 2.3. Graph-Level Features
 
 **Goal:** Create a feature vector that describes an *entire graph*, enabling graph-level classification.
 
-### Kernel Methods
+### Introduction of Kernel Methods
 
 Instead of explicitly designing a feature vector $\phi(G)$, we can define a **graph kernel** $K(G, G')$ that measures the similarity between two graphs. By the kernel trick, there implicitly exists some feature map $\phi$ such that:
 
@@ -291,7 +291,7 @@ This lets us use kernel-based ML methods (SVM, etc.) without ever computing $\ph
 
 **Key idea:** **Bag-of-\*** represents a graph by counts of certain substructures, ignoring order.
 
-### 1. Graphlet Kernel
+### Graphlet Kernel
 
 Represent a graph by counting the number of each type of **graphlet** it contains.
 
@@ -306,7 +306,7 @@ The definition of **graphlets at the graph-level** do **not** need to be connect
 
 **Limitation:** Counting graphlets is computationally expensive.
 
-### 2. Weisfeiler-Lehman (WL) Kernel
+### Weisfeiler-Lehman (WL) Kernel
 
 Use an iterative neighbourhood aggregation (**colour refinement**) scheme to build up a vocabulary of "colours" that encode local structure, then count these colours. This is a much more efficient alternative to the graphlet kernel.
 
@@ -336,7 +336,7 @@ After colour refinement, represent each graph as a count vector of how many node
 <br>
 <br>
 
-# Summary: The Traditional ML Pipeline on Graphs
+## 3. Summary: Traditional ML Pipeline on Graphs
 
 **What covered:**
 
@@ -354,11 +354,11 @@ The rest of the course (Lectures 3+) addresses this by introducing methods that 
 <br>
 <br>
 
-# 3. Node Embeddings
+## 4. Node Embeddings
 
 <br>
 
-## 3.1 Problem Definition
+### 4.1 Problem Definition
 
 Given an undirected graph $G = (V, E)$ with adjacency matrix $A$ (binary, no node features), learn a mapping function $f: u \rightarrow \mathbb{R}^{d}$ that assigns each node a low-dimentional vector $\mathbf{z}_{u}$ such that:
 
@@ -394,7 +394,7 @@ Nodes that are **"similar" in the graph** should be **close in embedding space**
 
 <br>
 
-## 3.2 The Encoder-Decoder Framework
+### 4.2 The Encoder-Decoder Framework
 
 Every node embedding method is an instance of this framework:
 
@@ -424,7 +424,7 @@ The embedding matrix is what we learn. Every node is assigned a unique, independ
 
 <br>
 
-## 3.3 Defining Similarity via Random Walks
+### 4.3 Defining Similarity via Random Walks
 
 For both DeepWalk and Node2vec, we define similarity as the probability that 2 nodes co-occur on short random walks. Specifically, 
 
@@ -440,7 +440,7 @@ $$
 
 <br>
 
-## 3.4 Walk Strategy 
+### 4.4 Walk Strategy 
 
 DeepWalk and Node2vec are differeciated by walk strategies.
 
@@ -516,7 +516,7 @@ In Node2vec, $p$ and $q$ **continuously interpolate** between two extremes withi
 
 <br>
 
-## 3.5 Optimisation
+### 4.5 Optimisation
 
 All random-walk embedding methods share the **same optimisation pipeline**. The **differences** between random-walk embedding methods live *entirely* in "How walks are generated" (§3.4).
 
@@ -641,7 +641,7 @@ $$
 
 <br>
 
-## 3.6 Full Algorithm Summary
+### 4.6 Full Algorithm Summary
 
 | Step | What happens | Shared or method-specific? |
 |---|---|---|
@@ -654,7 +654,7 @@ $$
 
 <br>
 
-## 3.7 Method Comparison
+### 4.7 Method Comparison
 
 ### DeepWalk vs. Node2Vec
 
@@ -700,7 +700,7 @@ $$
 
 <br>
 
-## 3.8 Key Equations 
+### 4.8 Key Equations 
 
 | Concept | Equation |
 |---|---|
@@ -718,11 +718,11 @@ $$
 <br>
 <br>
 
-# 4. Graph Embeddings
+## 5. Graph Embeddings
 
 <br>
 
-## 4.1 Problem Definition
+### 5.1 Problem Definition
 
 To predict the **entire graph** (or **subgraph**), we want to embed it into a single vector:
 
@@ -736,9 +736,9 @@ Typical tasks include (1) classifying toxic vs. non-toxic molecules; (2) identif
 
 <br>
 
-## 4.2 Approaches to Graph Embedding
+### 5.2 Approaches to Graph Embedding
 
-***How to aggregate node-level information into a graph-level representation?***
+*How to aggregate node-level information into a graph-level representation?*
 
 ### Approach 1 - Aggregate Node Embeddings
 
@@ -767,7 +767,7 @@ $$
 
 <br>
 
-## 4.3 Anonymous Walks
+### 5.3 Anonymous Walks
 
 ### Definition
 
@@ -808,7 +808,7 @@ Essentially, the number of *distinct* anonymous walks grows **exponentially** wi
 
 <br>
 
-## 4.4 Two Uses of Anonymous Walks for Graph Embedding
+### 5.4 Two Uses of Anonymous Walks for Graph Embedding
 
 ### Feature-based (Simple Counting)
 
@@ -897,7 +897,7 @@ That is - Average the embeddings of the context walks, concatenate with the grap
 
 <br>
 
-## 4.5 Using Embeddings for Downstream Tasks
+### 5.5 Using Embeddings for Downstream Tasks
 
 - **Cluster / community detection:** Cluster node embeddings to discover communities.
 
@@ -916,7 +916,7 @@ That is - Average the embeddings of the context walks, concatenate with the grap
 
 <br>
 
-## 4.6 Comparative Analysis
+### 5.6 Comparative Analysis
 
 ### Node Embedding vs. Graph Embedding
 
@@ -941,7 +941,7 @@ That is - Average the embeddings of the context walks, concatenate with the grap
 
 <br>
 
-## 4.7 Summary of Key Equations
+### 5.7 Summary of Key Equations
 
 | Concept | Equation |
 |---|---|
