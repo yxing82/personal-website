@@ -780,6 +780,7 @@ An **anonymous walk** strips away node identities (e.g. node $A, B, C$) and repl
 > - $B$ was already seen $\rightarrow$ index 2
 > - $D$ is the 4th new node $\rightarrow$ index **4**
 > Anonymous walk will be $$(1, 2, 3, 2, 4)$$.
+{: .prompt-tip }
 
 With such **agnostic to node identity** walks, two graphs with completely different node labels but the same topology will produce the same anonymous walk distributions.
 
@@ -793,6 +794,7 @@ Anonymous walks follow a strict chronological rule: whenever stepping onto a nod
 > $$
 > w_1 = 111, \quad w_2 = 112, \quad w_3 = 121, \quad w_4 = 122, \quad w_5 = 123
 > $$
+{: .prompt-tip }
 
 Essentially, the number of *distinct* anonymous walks grows **exponentially** with length $l$ (Bell Numbers):
 
@@ -819,6 +821,7 @@ $$
 $$
 
 > **Example:** For $l = 3$ with 5 possible walks, $$\mathbf{z}_G$$ is a 5-dimensional vector whose entries sum to 1.
+{: .prompt-tip }
 
 To make the empirical distribution be $\epsilon$-close to the true distribution with probability $\geq 1 - \delta$, the numner of sample is:
 
@@ -864,8 +867,8 @@ $$
 - $$w_t$$: specific target ealk currently looking at
 - $\Delta$: size of context/neighbourhood
 
-!!! example Example
-    If $\Delta = 1$, we will look at the exact one walk before the target walk ($$w_{t-1}$$) and the exact one walk after ($$w_{t+1}$$).
+> **Example:** If $\Delta = 1$, we will look at the exact one walk before the target walk ($$w_{t-1}$$) and the exact one walk after ($$w_{t+1}$$).
+{: .prompt-tip }
 
 , where the probability is computed via softmax:
 
@@ -873,13 +876,13 @@ $$
 P\left(w_t \;\middle|\; \{w_{t-\Delta}, \ldots, w_{t+\Delta}, \mathbf{z}_G\}\right) = \frac{\exp(y(w_t))}{\sum_{i=1}^{\eta} \exp(y(w_i))}
 $$
 
-!!! note Note
-    This is the probability of seeing target walk ($$w_{t}$$), given the surrounding walk contexts and the overall graph embedding.
+> **Tips:** This is the probability of seeing target walk ($$w_{t}$$), given the surrounding walk contexts and the overall graph embedding.
+{: .prompt-info }
 
-!!! note Note 
-    For the whole graph embedding learning process, 
-    - $\mathbf{z}_G$ is the global clue, meaning a completely separate, special vector of the entire graph. It's treated a shared context for all walks in the graph.
-    - $$w_{t-\Delta}$$ are local clues, representing local structures.
+> **Tips:** For the whole graph embedding learning process, 
+>   - $\mathbf{z}_G$ is the global clue, meaning a completely separate, special vector of the entire graph. It's treated a shared context for all walks in the graph.
+>   - $$w_{t-\Delta}$$ are local clues, representing local structures.
+{: .prompt-info }
 
 , and the score function $$y(w_t)$$ is:
 
