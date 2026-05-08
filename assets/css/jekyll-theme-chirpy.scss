@@ -14,12 +14,11 @@
 
 .post-content h1 {
   display: block !important;
-  font-size: 1.8rem; 
+  font-size: 1.8rem;
   font-weight: bold;
   margin-top: 1.5rem;
   margin-bottom: 1rem;
 }
-
 
 .prompt-tip table,
 .prompt-tip table thead,
@@ -30,11 +29,6 @@
   background-color: transparent !important;
   border-color: rgba(0, 0, 0, 0.1) !important;
 }
-
----
----
-
-@use 'main bundle';
 
 /* Custom prompt: example (purple) */
 .prompt-example {
