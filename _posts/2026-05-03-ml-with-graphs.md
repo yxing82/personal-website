@@ -1087,7 +1087,7 @@ Over iterations, all PageRank drains to zero.
 
 > **Example:**
 >
-> The surfer reaches page $b$ which has no out-links. i.e. *there is nowhere to go.*
+> The surfer reaches page $b$ which has **no out-links**. i.e. *there is nowhere to go.*
 >
 > The random walk breaks down.
 {: .prompt-example }
