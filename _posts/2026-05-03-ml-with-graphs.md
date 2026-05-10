@@ -1065,7 +1065,9 @@ Repeatedly multiplying by $M$ amplifies the component along the principal aigenv
 
 ### Spider Traps
 
-A **spider trap** is a set of pages whose out-links all stay within the group. The random surfer gets trapped, amd all importance acculates *inside* the trap.
+A **spider trap** is a set of pages whose out-links all stay within the group. 
+
+The random surfer gets trapped, amd all importance acculates *inside* the trap.
 
 > **Example:**
 > 
@@ -1080,6 +1082,19 @@ A **spider trap** is a set of pages whose out-links all stay within the group. T
 {: .prompt-tip }
 
 ### Dead Ends
+
+A **dead end** is a page with in-links but **no out-links**.
+
+The matrix $M$ is no longer column stochastic, as the dead-end column sums to 0. So importance "leaks out" of the graph. 
+
+Over iterations, all PageRank drains to zero.
+
+> **Example:**
+>
+> The surfer reaches page $b$ which has no out-links. i.e. *there is nowhere to go.*
+>
+> The random walk breaks down.
+{: .prompt-example }
 
 <br>
 
