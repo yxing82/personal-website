@@ -1145,3 +1145,108 @@ $$
 , and is computed via Power Iteration as before.
 
 <br>
+
+### 6.6 PageRank Variants
+
+Standard PageRank is a measure of **global importance**. With evenly splitted nodes, the surfer randomly teleports to a any node in the graph. But what if the importance is relative to specific context? 
+
+Below there are three variantes of PageRank, sharing the **same random walk framework** as the Random Teelportation, but differ in **where the surfer teleports to the teleport set $S$** when the walk starts.
+
+| Variant | Teleport set $S$ | What it measures |
+|---------|-----------------|------------------|
+| **PageRank** | All nodes (uniform) | Global importance |
+| **Personalised PageRank (PPR)** | A subset of nodes | Importance relative to a topic |
+| **Random Walk with Restarts (RWR)** | A single query node $\{q\}$ | Proximity / similarity to $q$ |
+
+### PPR Mechanism
+
+The resulting stationary distribution is biased toward pages that are close to the seed set. Page that are structually far from $S$ will receive low scores, even they have many in-links.
+
+PPR can be used in the topic-sensitive web search. For example, if $S$ contains pages about "Sports", the PPR scores rank all pages by the relevance of "Sports", combining link structure with topic proximity.
+
+### RWR Mechanism
+
+Given the teleport set $S$ only contains a single node ${q}$, the walker always returns to the node $q$ at each restart.
+
+Specifically,
+1. Start at the Query Node $q$
+2. At each step, follow the [Random Teleportation Mechanism](#64-random-teleportation-solution)
+3. Simulate for many steps, counting how often each node is visited
+4. Nodes with the highest visit counts have the **highest proximity** to the Query Node $q$
+
+The visit countes converge to the stationary distribution, giving each node a proximity score relative to $q$.
+
+> The proximity score naturally captures:
+> - **Multiple connections** between $q$ and another node
+> - **Multiple paths**, not just shortest paths
+> - **Direct and Indirect connections**, as multi-hop relationships
+> - **Degree of the node**
+{: .prompt-tip }
+
+> RWR is particularly effective for **"Recommendation"** in a **Bipartite Graph**.
+>
+> Consider a user-item Bipartite Graph where users are connected to items they have interacted with. To find an item similar to a query item $q$:
+> - Run RWR from $q$
+> - Items with the highest visit counts are the best recommendations
+{: .prompt-info }
+
+As the teleport set $S$ shrinks from all nodes $\rightarrow$ a subset $\rightarrow$ a single query node, the measure shifts from **global importance** to **local proximity**.
+
+<br>
+
+### 6.7 Matrix Factorisation
+
+Random Walk based embeddings $\equiv$ Matrix Factorisation
+
+Given an [embedding matrix](#4-node-embeddings) $$Z \in \mathbb{R}^{d \times \vert V \vert}$$ where column \mathbf{z}_u is the embedding vector of node $u$, the decoder measures **similarity** via the inner product
+
+$$
+\text{similarity}(u, v) \approx \mathbf{z}_{u}^\top \mathbf{z}_{v}
+$$
+
+> The definition of "similarity" determines which matrix to factorise
+{: .prompt-tip }
+
+### Adjacency-based Similarity
+
+Define two nodes are "similar" if they are directly connected. This means
+
+$$
+\mathbf{z}_u^{T} \mathbf{z}_v \approx A_{u,v}
+$$
+
+, where $A$ is an adjacency matrix.
+
+> The intuition is to have $$Z^{T} Z = A$$.
+>
+> But this is impossible, since the dimensioanlity of embeddings $d$ is way smaller than the number of nodes in most cases. 
+{: .prompt-tip }
+
+Our optimisation objective becomes
+
+$$
+\min_{Z} \| A - Z^{T} Z \|_2
+$$
+
+> The inner product decoder with node similarity, redefined by edge connectivity $\approx$ Matrix factorisation of adjacency matrix $A$
+{: .prompt-info }
+
+> Connections among all three perspectives
+> - **PageRank** (Random Walks) determines node importance via stationary distribution of a Markov Chain
+> - **Node Embeddings** (DeepWalk, Node2Vec) learn node representations by optimising co-occurrance in random walks
+> - **Matrix Factorisation** factorise a node similarity matrix into a low-rank embedding vectors 
+{: .prompt-info }
+
+
+<br>
+
+### 6.8 Limitations
+
+1. **No embedding for unseen nodes**
+    If the graph is updated with new nodes, embeddings for new nodes would not automatically appear. Need to recompute the whole updated graph.
+
+2. **Cannot capture local structual similarity**
+    Two nodes that far apart on the graph will have different embeddings, even they share a similar structure.
+
+3. Cannot utilise node, edge, or graph features
+    The methods only use the graph structure (adjacency matrix). They completely ignore any potential node features (e.g. user profile information), edge features (e.g. relationship types among nodes), or the graph itself (e.g. metadata).
