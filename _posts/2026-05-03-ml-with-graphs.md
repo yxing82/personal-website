@@ -1338,6 +1338,7 @@ P(Y_v = c) = \frac{1}{\sum_{(v,u) \in E} W(v,u)} \sum_{(v,u) \in E} W(v,u) \cdot
 
 > Iteration Stops When:
 > - Converge: Numerical probability stops making any significant change
+>
 >   In maths, we can say
 >   $$
 >   \forall \epsilon > 0, \exists \delta \in \mathbb{N}, s.t. \vert P_{\delta + 1}(Y_v = c) - P_{\delta}(Y_v = c) \vert < \epsilon
@@ -1376,6 +1377,7 @@ $$
     $$
 
 - $$\mathbf{O}_v$$ is summary vector of outgoing neighbour label information (nodes that point from $v$)
+
     $$
     O_v \in \mathbb{R}^{k} \text{where} \quad O_v[c] = \quad \text{number(or proportion) of outgoing neighbours with label c}
     $$
@@ -1384,17 +1386,21 @@ $$
 1. Train both classifiers on labelled training set
 
 - **$$\phi_1$$**: **Base classifier** using node features only
+
     How to map a node $v$'s individual features $$\mathbf{f}_v$$ to the correct label $$Y_v$$.
 - **$$\phi_2$$**: **Relational classifier** using node feature and neighbour label summary
+
     How to map both node $v$'s features $$\mathbf{f}_v$$ and its neighbours' labels $$\mathbf{N}_v$$ to the correct label $$Y_v$$.
+
+2. Initialise unlabelled nodes 
+    Apply **$$\phi_1$$** to all unlabelled nodes. This will make initial, "best guess" predictions $$ Y_v$$ for all unlabelled nodes. Similar to the mechanism of [Prbabilistic Relational Classifier](#prbabilistic-relational-classifier), every node in the graph has label, either a ground-truth label or an initial predicted label.
+
    
 > unlabelled nodes play zero role in the training.
 >
 > During the training, all labels are known, $$\mathbf{z}_v$$ can be computed exactly.
 {: .prompt-tip }
 
-2. Initialise unlabelled nodes 
-    Apply **$$\phi_1$$** to all unlabelled nodes. This will make initial, "best guess" predictions $$ Y_v$$ for all unlabelled nodes. Similar to the mechanism of [Prbabilistic Relational Classifier](#prbabilistic-relational-classifier), every node in the graph has label, either a ground-truth label or an initial predicted label.
 
 **Phase 2 (Iteration)**
 
@@ -1460,7 +1466,7 @@ $$
 | Advantage | Limitation |
 |---|---|
 | Easy to code up | Convergence is not guaranteed |
-| Can apply to any graphical model with any form of potentials <br> including high-order | For graphs with cycles, messages will be in a loop <br> Loopy BP is then an approximation, not exact inference |
+| Can apply to any graphical model with any form of potentials <br> (including high-order) | For graphs with cycles, messages will be in a loop <br> Loopy BP is then an approximation, not exact inference |
 
 ### Summary and Comparison
 
