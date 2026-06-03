@@ -205,7 +205,7 @@ This paper is foundational for understanding the methodological challenges and e
 
 It provides the template for a census-data-based approach to studying migration flows associated with neighbourhood change. The use of proxy indicators, the construction of comparison areas, and the comparison with London-wide baselines are all methodological moves that inform my master’s dissertation, even where the dissertation improves upon them. 
 
-The paper’s core argument — *displacement is real but invisible in standard data, and that it rearranges rather than solves social problems* — is the motivating concern behind my dissertation’s focus on where displaced populations go.
+The paper’s core argument — **displacement is real but invisible in standard data, and that it rearranges rather than solves social problems** — is the motivating concern behind my dissertation’s focus on where displaced populations go.
 
 ## Connections to my master’s dissertation
 
