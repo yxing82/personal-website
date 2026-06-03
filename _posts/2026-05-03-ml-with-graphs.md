@@ -2,7 +2,7 @@
 title: "Learning Notes on Machine Learning with Graphs (Updating)"
 date: 2026-05-03
 categories: [Notes, Machine Learning]
-tags: [graphs, ml, random walk, node embedding, graph embedding, pagerank, node classification, deep learning]
+tags: [graphs, ml, random walk, node embedding, graph embedding, pagerank, node classification, deep learning, GNN]
 math: true
 ---
 
