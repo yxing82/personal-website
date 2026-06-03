@@ -1,6 +1,6 @@
 ---
 title: "Summary: Atkinson (2000) — Measuring Gentrification and Displacement in Greater London"
-date: 2026-06-01
+date: 2026-06-03
 categories: [Literature Notes, Urban Geography]
 tags: [gentrification, displacement, migration, professionalisation, longitudinal study, census data]
 ---
