@@ -7,7 +7,7 @@ tags: [gentrification, displacement, migration, professionalisation, longitudina
 
 ## Full Reference
 
-Atkinson, R. (2000) ‘Measuring Gentrification and Displacement in Greater London’, Urban Studies, 37(1), pp. 149–165.
+Atkinson, R. (2000) ‘Measuring Gentrification and Displacement in Greater London’, Urban Studies, 37(1), pp. 149–165. https://www.jstor.org/stable/10.2307/26195250.
 
 ```bibtex
 @article{twiggemolecey2014exploring,
