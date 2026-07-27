@@ -1240,7 +1240,7 @@ $$
 
 <br>
 
-### 6.7 Limitations
+### 6.7 Limitations - Shallow Encoders
 
 1. **No embedding for unseen nodes**
     If the graph is updated with new nodes, embeddings for new nodes would not automatically appear. Need to recompute the whole updated graph.
@@ -1250,6 +1250,13 @@ $$
 
 3. **Cannot utilise node, edge, or graph features**
     The methods only use the graph structure (adjacency matrix). They completely ignore any potential node features (e.g. user profile information), edge features (e.g. relationship types among nodes), or the graph itself (e.g. metadata).
+
+These limitations naturally extend research to explore  ***Deep Encoders*** (Section 8.1), which can also be combiened with node similarity functions defined in Lecture 3. With deep encoders, we can then be able to solve:
+
+1. Node classification - predict a type of a given node
+2. Link prediction - predict whether two nodes are linked
+3. Community detection - identify densely linked clusters of nodes
+4. Network similarity - how similar are two (sub)networkds
 
 <br>
 <br>
@@ -1508,14 +1515,19 @@ Modern deep learning is designed for simple sequences and grids.
 
 Graphs, however, have more complex properties:
 
-- **Arbitrary size and complex topology**: no fixed grid structure.
+- **Arbitrary size and complex topology**: no fixed grid structure.  
 - **No fixed node ordering**: there's no canonical way to index nodes.
 - **Dynamic and multimodal**: graphs may change over time and have heterogeneous features.
+
+> It is very important to have a **proper graphical representation**.
+{: .prompt-tip }
 
 
 <br>
 
 ### 8.2 Foundations of Deep Learning
+
+We treat supervised learning of machine learning as optimisation problems.
 
 ### Loss Functions and Cross-Entropy
 
@@ -1781,3 +1793,15 @@ This is purely a computational convenience, because GPUs are optimised for 2D ma
 >
 > Smashing a $2 \times 2$ matrix into a length-4 list strips away those geometric structures.
 {: .prompt-tip }
+
+
+### Summary of Deep Learning Basics
+
+We start from the **Objective Function**:
+$$
+\min_{\theta} \mathcal{L} (y, f(\mathbf{x}))
+$$
+
+, where $$f$$ can be a simple linear layer, an MLP, or other neural networks (e.g. a GNN).
+
+Given sampling a minibatch of input $$\mathbf{x}$$, we use **forward propagation** to compute the loss function $$\mathcal{L}$$. Then, we use **back-propagation** to obtain the gradient of loss functions $$\nabla_\theta \mathcal{L}$$, with a chain rule. Finally, we use **stochastic gradient descent (SGD)** to optimise for $$\theta$$ over many iterations.
