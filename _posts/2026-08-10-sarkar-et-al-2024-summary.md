@@ -148,6 +148,7 @@ Structurally, this is very close to the cascade-direction pattern in my master's
 My preferred logic is to **first describe the flow structure, then test what it corresponds with**.
 
 A comaprison bettwen this paper and my master dissertation:
+
 | Dimension | Sarkar et al. (2024) | My dissertation |
 |---|---|---|
 | Socioeconomic information on movers | Not directly observed in the migration typology | Not directly observed |
