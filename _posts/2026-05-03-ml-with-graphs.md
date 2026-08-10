@@ -125,7 +125,7 @@ Limitation: treats all neighbours equally.
     
     A node is important if it lies on many shortest paths between other nodes.
 
-    $$c_v = \sum_{s \neq v \neq t} \frac{\text{# shortest paths between } s \text{ and } t \text{ that pass through } v}{\text{# shortest paths between } s \text{ and } t}$$
+    $$c_v = \sum_{s \neq v \neq t} \frac{\text{\# shortest paths between } s \text{ and } t \text{ that pass through } v}{\text{\# shortest paths between } s \text{ and } t}$$
 
     Captures "bridge" nodes.
 
