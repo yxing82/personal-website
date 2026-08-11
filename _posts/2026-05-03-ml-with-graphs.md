@@ -154,7 +154,7 @@ The fundamental building block is the **triangle**. If node $v$ is connected to 
 
 $$
 \begin{aligned}
-e_{v} &= \frac{\text{# edges among neighbours of } v}{\text{# node pairs among neighbours of } v} \\[1em]
+e_{v} &= \frac{\text{\# edges among neighbours of } v}{\text{\# node pairs among neighbours of } v} \\[1em]
 &= \frac{\text{# triangles}}{\binom{k_v}{2}} \in [0, 1]
 \end{aligned}
 $$
@@ -171,7 +171,7 @@ Ranges from 0 (no edges among neighbours) to 1 (neighbours form a complete cliqu
 > 
 > **Bipartite Clustering Coefficient (4-Cycles / Squares):** counts 4-cycle (square) as a closed path $u_{1} \rightarrow v_{1} \rightarrow u_{2} \rightarrow v_{2} \rightarrow u_{1}$, where $u_{1}, u_{2} \in U$ and $v_{1}, v_{2} \in V$. 
 >
-> $$cc_v = \frac{\text{# closed 4-cycles through } v}{\text{# possible 4-cycles through } v}$$
+> $$cc_v = \frac{\text{\# closed 4-cycles through } v}{\text{\# possible 4-cycles through } v}$$
 >
 > | Graph type | Smallest cycle | Clustering measures |
 > |---|---|---|
