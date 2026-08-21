@@ -721,14 +721,172 @@ If the paper is used to make claims about tall flats more generally, I need to k
 
 Because it demonstrates why **neighbourhood outcomes cannot be inferred directly from built form or population composition**. Resident experience and institutional relationships matter.
 
-## Chapter 9 - 
+## Chapter 9 - John A. Jackson, "The Irish"
 
 ### Chapter Reference
 
-
+Jackson, J.A. (1964) ‘The Irish’, in Centre for Urban Studies (ed.) London: Aspects of Change. London: MacGibbon & Kee, pp. 293–308.
 
 ```bibtex
+@incollection{jackson1964irish,
+  author    = {Jackson, J. A.},
+  title     = {The Irish},
+  booktitle = {London: Aspects of Change},
+  editor    = {{Centre for Urban Studies}},
+  publisher = {MacGibbon \& Kee},
+  address   = {London},
+  year      = {1964},
+  pages     = {293--308}
+}
+```
 
+### What is the article about?
+
+Written during a period of substantial post-war migration to Britain, it examines **Irish migration to London and the ways Irish migrants became incorporated into the city's labour market, housing arragements and social geography**.
+
+A particular focus is the **relationship between migration and employment**. Irish migrants were important sources of labour in sectors such as construction and contracting, where persistent labour shortages and relatively low wages created strong demand for immigrant workers. Employment arrangements could also directly shape accommodation and transport, with some contracting companies providing workers with both tmeporary housing and transport to worksites.
+
+It also considers differences within the Irish migrant population, especially by **occupation and skill level**, alongside the role of kinship, marriage and place-based networks in shaping migration and settlement.
+
+### What kind of contribution is the paper trying to make?
+
+Mainly empirical and sociological, with strong links to migration and labour-market research.
+
+Jackson shows Irish migrants' experiences differ according to occupation, skill, employment conditions and existing social networks.
+
+It also provides an early account of migration as a process embedded in several connected systems: **employment, housing, transport, family networks and residential settlement**.
+
+### What gap(s) does it identify?
+
+It addresses the difficulty of understanding immigrant settlement through migration numbers alone.
+
+Irish migrants' experiences after arrving in London depended strongly on:
+- the sectors and occupations in which they worked;
+- the security and conditions of their employment;
+- housing associated with or available through work;
+- kinship connections with earlier migrants;
+- links to particular places of origin in Ireland.
+
+This suggests that simply knowing that someone is an "Irish immigrant" tells us relatively little about their subsequent mobility or settlement behaviour.
+
+### What is/are the main research question(s)?
+
+(No formal research questions, but broadly examines)
+
+- What draws Irish migrants to London, and how is this connected to labour demand?
+- How are Irish migrants incorporated into London's labour market, particularly across different occupations and levels of skill?
+- How do employment conditions interact with housing and transport arrangements after migration?
+- Why do different groups of Irish migrants show different patterns of employment stability and job mobility?
+- What role do kinship and place-based networks play in migration, settlement and residential concentration within London?
+
+### How are they explored/presented?
+
+Jackson combines descriptions of migration with evidence on **employment sectors, workplace behaviour, accommodation, occupational differences, marriage and kinship networks**.
+
+It moves between the individual migrant experience and wider structural conditions. e.g.:
+- construction firms' demand for labour is connected to workers' accommodation and commuting arrangements;
+- individual migration decision are connected to family members who have already established employment and housing in London.
+
+### How are data used to test them?
+
+It uses descriptive evidence on Irish workers and migrants, including examples from particular employment sites and observations from employers.
+
+Evidence on occupational differences is also used to compare employment stability between relatively unskilled Irish workers and those entering more skilled or professional occupations.
+
+### What are the main findings?
+
+- **Irish migration to London was closely connected to labour demand**, particularly in labour-intensive sectors such as construction and contracting.
+
+- **Employment could directly shape housing and transport arrangements.** In some construction work, employers provided temporary accommodation and organised transport to worksites.
+
+- **Irish migrants were not a homogeneous group.** Employment behaviour varied across occupations and skill levels.
+
+- **Occupational position was associated with different employment trajectories.** Less-skilled workers were described as moving more frequently between jobs, while skilled and professional migrants tended to seek greater permanence and employment security.
+
+- **Kinship networks played an important role in migration and settlement.** Migrant who secured work and housing could attract relatives to follow, while connections to particular places in Ireland contributed to residential clustering in particular parts of London.
+
+### What is the contribution?
+
+It shows how **migration cannot be separated from the systems migrants enter after they arrive**.
+
+- employment opportunities influence who migrates and what kind of work they enter;
+- employment can influence where they live and how they travel;
+- occupational position affects subsequent job mobility;
+- kinship networks influence both who follows and where they settle.
+
+It is particularly useful for understanding **migration as a relational and cumulative process**.
+
+It also demonstrates that **migrant identity alone is not enough to explain behaviour**. People sharing the same migrant background can follow very different trajectories depending on their occupation, skill level, employment security and social networks.
+
+### Discuss!
+
+**1. Labour, housing and transport appear as connected systems**
+
+One of the most interetsting points for me is the construction-worker example. Workers could be recruited because employers needed labour, housed near or through their workplace, and transported to work by the employer. This makes it difficuly to treat residential location, employment location and transport *independently*.
+
+The causal relationship could run in several direction: **labour demand --> migration --> housing arragement --> commuting pattern**, but housing availability or transport accessibility could also determine which employment opportunities are realistically available.
+
+**2. "Immigrant" is too coarse a category for explaining mobility**
+
+This paper's comparison between **unskilled** workers and migrants in **skilled** occupations or professions is particulalry useful. Even among people sharing the same Irish immigrant identity, employment behaviour differed considerably. Some workers frequently moved between employers, whereas more highly skilled migrants appeared to seek greater stability. 
+
+So, **migration status or ethnicity should not be treated as sufficient explanations of mobility behaviour**. Occupation, income, age, life stage, employment conditions, education and housing circumstances may all interact with migrant backgrouds.
+
+**3. Migration networks can actively produce sparial concentration**
+
+The kinship discussion gives a clear mechanism for how migrant residential clusters can emerge. The described process looks like:
+
+**first migrant establishes work + housing --> relative follow --> newcomers received support --> migrants from related places concentrate spatially**
+
+Jackson also notes that Irish kinship was connected not only to family but also to *place*, with people from particular towns and regions tending to cluster in particular parts of London.
+
+This is much more informative than simply observing that an ethnic group is spatially concentrated. It provides a possible **migration mechanism through which concentration is reproduced**.
+
+**4. Job mobility after migration raises a sequencing question**
+
+The discussion of frequent job changes also makes me wonder about the **temporal relationship between international migration, employment mobility and residential mobility**.
+
+- Does the migrant first accept relatively *insecure* work because it enables entry to London, and then subsequently move through jobs as they accumulate information, skills and contacts?
+- If so, what initially appears to be "instability" may actually form part of a longer adjustment trajectory after migration?
+
+This reminds me of Chapter 7, where residential relocation was followed by subsequent changes in workplace. Across two chapters, there seems to be a recurring idea that **moving residence and changing employment are dynamically connected**.
+
+### What am I still confused about?
+
+- **How exactly did the labour market, housing market and transport interact for Irish migrants?** The construction example provides a particularly direct relationship, but how representative was this arrangement outside major contracting work?
+- How different would this relationship look in contemporary London, where the employment structure has shifted substantially towards financial services, professional work and technology-intensive sectors?
+- Why did unskilled Irish workers appear more likely to change jobs frequently, while skilled and professional migrants sought greater stability? Was this primarily due to occupation and employment conditions, or did difference in age, education, duration since migration and settlement intentions also matter?
+- How much of migrants' occupational and residential behaviour can actually be attributed to being migrants, not the socioeconomic characteristics associated with particular migrant groups?
+- If kinship networks cause people from the same places of origin to cluster in particular destinations, **how persistent are those spatial concentrations across generations**, especially once later generations mo longer depend on the original migration networks?
+
+### Based on the above, why was I encouraged to read this?
+
+Because it adds **international migration and migrant networks to the wider discussion of London's population redistribution**.
+
+More importantly, it shows that migration cannot be understoos simply as an origin-destination movement. What happens afterwards depends on employment, housing, transport, occupational position and existing social networks.
+
+1. Poeple belonging to the same broad social or migrant category can display very different mobility behaviourl;
+2. Observed spatial concentration is itself the outcome of migration processes. Kinship networks can repeatedly channel migrants from particular origins towards particular destinations, meaning that **neighbourhood composition is partly produces by the structure of migration flows that precede it**.
+
+It is then very crucial to think more carefully about the **relationship between individual mobility decisions, migration networks and cumulative neighbourhood change**.
+
+## Chapter 10 - Sheila Patterson, "Polish London"
+
+### Chapter Reference
+
+Patterson, S. (1964) ‘Polish London’, in Centre for Urban Studies (ed.) London: Aspects of Change. London: MacGibbon & Kee, pp. 309–335.
+
+```bibtex
+@incollection{patterson1964polish,
+  author    = {Patterson, Sheila},
+  title     = {Polish London},
+  booktitle = {London: Aspects of Change},
+  editor    = {{Centre for Urban Studies}},
+  publisher = {MacGibbon \& Kee},
+  address   = {London},
+  year      = {1964},
+  pages     = {309--335}
+}
 ```
 
 ### What is the article about?
