@@ -942,7 +942,7 @@ It is also useful to compare this with Chapter 9. The Irish chapter emphasises l
 
 ### Based on the above, why was I encouraged to read this?
 
-It broadens my understanding of migration by showing that residential pattern can be shaped by **housing affrodability, transnational networks and historical experience**.
+It broadens my understanding of migration by showing that residential pattern can be shaped directly by **housing affrodability**, while **transnational ties and shared wartime experience** help sustain cummonity identity despite increasing spatial dispersal.
 
 ## What I'm seeing across the book so far
 
