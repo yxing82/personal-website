@@ -145,15 +145,17 @@ This helps explain why a weeak aggreagte relationship does **not** mean migratio
 
 ## What am I still confused about?
 
-- How much have newer UK datasets solved the problem that socioeconomic status is only observed **after** the move?
+- How much have later UK data solved the origin-status problem?
 
-- Are student-to-graduate transitions particularly important for short-distance moves within London?
+- How important are short-distance student-to-graduate moves within London?
 
 - How sensitive would RQ2 & 3 be to a different zonation or neighbourhood scale?
 
 - Is a positive migration-composition correlation enough to call the process "reinforcement", or should subsequent neighbourhood change always be tested separately?
 
-- How much would their findings change if flows beyond the city-region boundary were included?
+- How should flow balance and flow intensity be combined?
+
+- How should Census questions be designed when researchers can't know future analytical needs?
 
 ## Beyond on the above, why was I encouraged to read this?
 
