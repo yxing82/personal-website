@@ -1,5 +1,5 @@
 ---
-title: "Summary: Champion & Coombes (2010): Migration and Socio-Economic Polarisation within British City Regions"
+title: "Summary: Champion & Coombes (2010) — Migration and Socio-Economic Polarisation within British City Regions"
 date: "26/08/2026"
 categories: [Literature Notes, Urban Geography]
 tags: [migration, neighbourhood change, census]
