@@ -178,9 +178,7 @@ The authors lean towards the former interpretation, arguing that agglomeration p
 
 Sectoral effects are substantially larger than the estimated geographical effects. Knowledge-intensive and advanced activities are spatially concentrated.
 
-So,
-
-    Does place independently generate an escalator, or does place matter partly because particular kinds of jobs are concentrated there?
+So, **Does place independently generate an escalator, or does place matter partly because particular kinds of jobs are concentrated there?**
 
 ### 5. Implication for "stepping off"
 
