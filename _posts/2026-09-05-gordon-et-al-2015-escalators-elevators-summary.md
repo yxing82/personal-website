@@ -1,5 +1,5 @@
 ---
-title: "Summary: Gordon et al. (2015) - Urban Escalators and Interregional Elevators"
+title: "Summary: Gordon et al. (2015) — Urban Escalators and Interregional Elevators"
 date: 2026-09-05
 categories: [Literature Notes, Population Geography]
 tags: [escalator effect, elevator effect, occupational mobility, migration, agglomeration, city-region, labour market, England and Wales]

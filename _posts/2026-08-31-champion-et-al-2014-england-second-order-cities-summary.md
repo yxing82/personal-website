@@ -1,5 +1,5 @@
 ---
-title: "Summary: Champion, Coombes & Gordon (2014) - England's Second-Order Cities as Human-Capital Escalators"
+title: "Summary: Champion, Coombes & Gordon (2014) — England's Second-Order Cities as Human-Capital Escalators"
 date: 2026-08-31
 categories: [Literature Notes, Population Geography]
 tags: [escalator region, migration, social mobility, career progression, London, internal migration, second-order cities]

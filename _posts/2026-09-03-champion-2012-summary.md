@@ -1,7 +1,7 @@
 ---
 title: "Summary: Champion (2012) — Testing the Return Migration Element of the Escalator Region Model"
 date: 2026-09-03
-categories: [Literature Notes, Urban Geography, Migration]
+categories: [Literature Notes, Population Geography, Migration]
 tags: [escalator region, return migration, south-east England, social mobility, ONS Longitudinal Study, life-course, regional inequality, human capital]
 ---
 

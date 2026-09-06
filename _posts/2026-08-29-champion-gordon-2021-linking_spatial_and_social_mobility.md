@@ -1,5 +1,5 @@
 ---
-title: "Summary: Champion & Gordon (2021) - Linking Spatial and Social Mobility: Is London's 'escalator' as strong as it was?"
+title: "Summary: Champion & Gordon (2021) — Linking Spatial and Social Mobility: Is London's 'escalator' as strong as it was?"
 date: 2026-08-29
 categories: [Literature Notes, Population Geography]
 tags: [escalator region, migration, social mobility, career progression, London, internal migration, age selectivity, second-order cities]
