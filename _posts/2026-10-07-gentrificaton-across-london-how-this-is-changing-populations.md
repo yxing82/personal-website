@@ -94,7 +94,9 @@ Comparing with my master dissertation, this article approaches the relationship 
 > Example
 >
 > Declining social-housing occupancy may reflect displacement;
+>
 > But, could also result from Right to Buy or estate regeneration. 
+>
 > Tenure change alone does not tell us whether, how or where people moved.
 {: .prompt-example }
 
