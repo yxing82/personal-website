@@ -12,7 +12,7 @@ GLA Intelligence (2019) GLA Population Yield Calculator: Methodology. London: Gr
 ```bibtex
 @techreport{gla2019yield,
   author      = {{GLA Intelligence}},
-  title       = {{GLA} Population Yield Calculator: Methodology},
+  title       = {GLA Population Yield Calculator: Methodology},
   institution = {Greater London Authority},
   address     = {London},
   year        = {2019},
